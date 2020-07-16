@@ -10,7 +10,8 @@
         <h2>これは投稿一覧のページです</h2>
 
         {% for post in posts.all %}
-
+            <!-- 投稿の番号(djangoが勝手に一意にするために割り振ってくれる) -->
+            {{post.id}}:
             {{post.title}}
             <br/><br/>
             {{post.published}}

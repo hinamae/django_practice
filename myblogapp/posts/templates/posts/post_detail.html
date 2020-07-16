@@ -1,4 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+    <head>
+        <title>
+            投稿一覧
+        </title>
+    </head>
+    <body>
+
+
 {{ post_id }}
+
+<br/>
+<br/>
 {{post.title}}
+<br/>
+<br/>
+
 {{post.published}}
+<br/>
+<img src="{{ post.image.url}}" />
+<br/>
+<!-- #サマリではなく本文全部表示 -->
 {{post.body}}
+
+</body>
+</html>

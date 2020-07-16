@@ -287,3 +287,15 @@ BASE_DIRはsetting.pyで設定されている、osにpythonのプロジェクト
 
 URLは　　http://127.0.0.1:8000/posts/{posts.id}
 のようにすることを考える
+
+
+
+get_object_or_404
+
+をインポートするのは便利そう！！
+オブジェクトがなければ404を返すという機能が実装できる
+
+    post = Post.objects.get(pk=post_id)
+
+↓
+

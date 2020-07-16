@@ -228,3 +228,27 @@ adminじゃないのをつけた
 adminサイトから投稿できるようにする
 postsフォルダのadmin.pyを編集
 
+#### templateエンジン
+
+djangoに内蔵されているtemplate Engineには2種類ある
+- django
+- Jinja 2
+    template ->  template = 寺 -> 神社　らしい笑
+
+DBから取り出した値を変数としてtemplate Engineに渡すと、
+htmlファイルに渡してくれる。
+静的なページ(画像など)だけでなく、動的なページを実現することもできる。
+
+テンプレートエンジンの記法：
+curly bracketカーリーブラケット＝　{% %} 
+
+
+```html
+<!-- postsの全てのデータを取り出す。 -->
+<!-- タイトルを表示する。 -->
+        {% for post in posts.all %}
+
+            {{post.title}}
+
+        {% endfor %}
+```

@@ -1,5 +1,7 @@
 from django.db import models
 
+# DBからデータを取り出し、加工して、テンプレートに渡す
+
 # Create your models here.
 class Post(models.Model):
     # char型

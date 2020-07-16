@@ -16,3 +16,7 @@ class Post(models.Model):
 # 文字列をページに返す
     def __str__(self):
         return self.title
+
+# body部分、つまり投稿の本文のところの表示を100文字のみに限定する
+    def summary(self):
+        return self.body[:100]

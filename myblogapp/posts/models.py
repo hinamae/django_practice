@@ -10,3 +10,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to='media/')
     #テキスト型
     body = models.TextField()
+
+# 文字列をページに返す
+    def __str__(self):
+        return self.title

@@ -252,3 +252,24 @@ curly bracketカーリーブラケット＝　{% %}
 
         {% endfor %}
 ```
+
+#### staticなデータ
+
+staticなデータとは＝映像、画像　など
+
+今回は画像
+
+htmlではimgタグで指定
+
+呼び出すURL設定　＋　フォルダ指定
+が必要
+
+BASE_DIRはsetting.pyで設定されている、osにpythonのプロジェクトがどこにあるか知らせているディレクトリ
+
+今回'pics'というURLを動的なURLとして仮想的に作成している！
+
+アプリ以外のファイルで、
+- settingの変更 (MEDIA_ROOTとMEDIA_URLの設定)
+- urlの変更(static)
+
+が必要！！

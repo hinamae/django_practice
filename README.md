@@ -124,7 +124,7 @@ models.py
 
 #### アプリの存在をプロジェクトに知らせる
 apps.pyの中に書いてある、
-Posts.Configを呼び出せるようにする
+PostsConfigを呼び出せるようにする
 
 setting.pyのなかのINSTALL_APPみたいなところに
     'posts.apps.PostsConfig',
@@ -141,12 +141,14 @@ myblogapps.ulrs
 アプリ内のルーティング(urls.py)
 posts.urls
 ↓
+viewsファイルの中のindex関数
 views.index
 
 アプリの中にurls.pyは自分で作る。
 
-import
+※import
 他のファイルを使うときはinclude記載する
+
 
 
 

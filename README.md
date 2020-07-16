@@ -81,6 +81,8 @@ $ django-admin startproject myblogapp
 ```
 
 ### ファイル説明
+manage.py=djangoを操作するためのファイル
+
 __init__.py
 
 パイソンのプログラムだということを知らせる
@@ -144,11 +146,82 @@ posts.urls
 viewsファイルの中のindex関数
 views.index
 
-アプリの中にurls.pyは自分で作る。
+(アプリの中のurls.pyファイルは自分で作る。)
 
 ※import
 他のファイルを使うときはinclude記載する
 
+#### templateファイルを使ってみる
+
+views.pyにtemplatesフォルダの中のファイルを指定して、呼び出す
 
 
+#### modelsを使ってみる
 
+models内にクラスを作成<br>
+↓<br>
+コンソールから、makemigrationsでDBのテーブル作成ファイルを作成<br>
+↓<br>
+コンソールから、migrateでDBのテーブル作成<br>
+
+
+データベース内のデータをあたかも一つの変数のように使用することができる
+
+modelsの中のクラス＝データと命令(更新、削除など？)をセットで扱う変数のテンプレート
+
+書き方例：
+```py
+    # char型
+    title = models.CharField(max_length=100)
+    # 日付型
+    published = models.DateTimeField()
+    # 画像(引数で画像の格納先を指定)
+    image = models.ImageField(upload_to='media/')
+    #テキスト型
+    body = models.TextField()
+
+```
+
+
+```sh
+# 新しく定義ファイルがあった場合、それをDBに投入するためのファイルを自動生成する。
+python manage.py makemigrations
+```
+自動生成されたファイルは、migrationの中に格納されている。
+
+```sh
+# 自動生成されたファイルを実行して、テーブルを作成
+python manage.py migrate
+```
+
+
+#### sqlite
+
+sqliteコマンド
+```sh
+#DBに接続
+sqlite3 db.sqlite3
+#SQL文
+
+#table表示
+.table
+
+#select
+select * from posts_post ;
+
+#終了
+.exit
+
+```
+
+#### admin
+
+公開するならadmin以外の名前をつける！（セキュリティてきに）
+adminじゃないのをつけた
+```
+ python manage.py createsuperuser
+
+```
+
+adminサイトから投稿できるようにする
+postsフォルダのadmin.pyを編集

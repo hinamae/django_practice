@@ -11,8 +11,7 @@
 
         {% for post in posts.all %}
             <!-- 投稿の番号(djangoが勝手に一意にするために割り振ってくれる) -->
-            {{post.id}}:
-            {{post.title}}
+            <a href = "{% url 'post_detail' post.id %}">{{post.title}}</a>
             <br/><br/>
             {{post.published}}
             <br/><br/>

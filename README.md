@@ -297,5 +297,15 @@ get_object_or_404
 
     post = Post.objects.get(pk=post_id)
 
-↓
+
+index.htmlにリンクを追加
+
+a href = "{% url 'post_detail' post.id %}">{{post.title}}</a>
+→
+
+
+ルーティングの設定url.py
+path('posts/<int:post_id>/',views.post_detail,name="post_detail"),
+nameを追加した
+
 

@@ -399,3 +399,62 @@ imgタグの中にim-fluidクラスを追加する
 →画像の角が丸くなる
 class="rounded "
 
+#### imgの調整
+
+imgタグのクラスに、style="max-height: 200px ;"を追加することにより、
+写真が小さくなる
+
+./posts/static/postsを追加（ディレクトリ）
+
+linkのhrefにgithubのlinkを追加
+
+#### staticファイルのは１
+
+./templateと同じように、
+./posts/static/postsを追加（ディレクトリ）
+
+
+{% load static %} <br>
+=staticなフォルダを指定できるようにする<br>
+<br>
+img<br>
+画像を読み込む<Br>
+
+
+src<Br>
+ソースは<br>
+
+
+{% %}<br>
+動的にファイルを指定できるようにする<br>
+
+
+static<br>
+./posts/static/を見に行く<br>
+
+
+'posts/home.JPG'<br>
+postsフォルダの画像を見に行く<br>
+
+その他の要素は、投稿のimgタグの属性sを参照
+
+
+
+#### detailの画面の方にもbootstrapを適用
+
+index.htmlをコピー
+
+post_detail.htmlにペーストして、
+修正
+
+
+- titleを変更
+- for文をとりのぞく
+- 最新の投稿の文字列を取り除く
+- summary部分をbodyに変えて、detail画面では全文を表示する
+
+
+### トラブルシューティング
+
+- webのソースをみてみる(検証から)
+- サーバ再起動

@@ -23,7 +23,7 @@ from posts import views
 
 # urlパターン＋それらのパス
 urlpatterns = [
-    path('posts/', include('posts.urls')),
+    path('posts/', include('posts.urls'), name = "index_url"),
     path('admin/', admin.site.urls),
     path('posts/<int:post_id>/',views.post_detail,name="post_detail"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

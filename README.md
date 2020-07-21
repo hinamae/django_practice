@@ -308,4 +308,94 @@ a href = "{% url 'post_detail' post.id %}">{{post.title}}</a>
 path('posts/<int:post_id>/',views.post_detail,name="post_detail"),
 nameを追加した
 
+#### bootstrap
+
+3つのファイルが必要
+- css 
+- jquery
+- bootstrap.js
+
+#####　特徴
+- レスポンジブデザイン＝画面の幅によってUIが綺麗にかわってくれる
+- オープンソース
+- official themesからデザインを入手可能(キットが購入可能)
+    https://themes.getbootstrap.com
+
+
+##### 使い方
+
+- ダウンロード
+- クラウド上のbootstrapを参照(他サイトでbootstrapを読み込んでいれば、ブラウザがキャッシュしているため、表示も高速になる)
+
+Starter templateから
+
+https://getbootstrap.com/docs/4.5/getting-started/introduction/
+
+
+bootstrap適用時
+
+headタグの中に挿入
+```html
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+```
+
+bodyタグの中に挿入(bodyタグを閉じる前)
+
+```html
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+```
+
+
+#### ナビゲーションバー(上部のメニューバーを作成(bootstrap)
+
+画面を縮めると、ハンバーガーメニューになる
+bootstrapリファレンスのcomponentのページから
+
+
+https://getbootstrap.com/docs/4.5/components/navbar/
+
+
+コピーしてきたものを、
+本文の一番上、見出しより前に貼り付ける。
+bodyタグの中のh1タグよりも上！
+
+
+
+divタグ=四角形の領域であらわしたhtmlの領域
+
+bootstrapではないコンテンツの部分はdivで囲んでおく
+
+配色を指定する部分=        
+
+```html
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+```
+
+#### 写真をレスポンシブデザインにする(画面の幅が変わっても調整される)
+
+bootstrapリファレンス、document>content>images>responsive images
+
+https://getbootstrap.com/docs/4.5/content/images/
+
+
+image fluidにする
+
+imgタグの中にimg-fluidクラスを追加する
+
+→画像がリスポンシブになる
+class="img-fluid"
+
+htmlタグのクラスは複数指定することが可能
+
+
+
+imgタグの中にim-fluidクラスを追加する
+
+→画像の角が丸くなる
+class="rounded "
 

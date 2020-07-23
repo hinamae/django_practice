@@ -2,7 +2,7 @@
 <html lang="ja-jp">
     <head>
         <title>
-            前山の日記
+            サイトについて
         </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,8 +35,8 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                    {% load static %}
-                    <a class="nav-link"  href="{% static 'posts/about.html' %}">About</a>
+                <!-- {% load static %} -->
+                  <a class="nav-link" href="{% static 'posts/about.html' %}" >About</a>
                 </li>
               </ul>
             </div>
@@ -46,23 +46,29 @@
         <div>
             <h1 class="text-center">前山の日記</h1>
             <br></br>
-            {% load static %}
-            <img src="{% static 'posts/home.JPG' %}" class="img-fluid rounded" style="max-height: 200px ;"/>
+            <!-- {% load static %} -->
+            <!-- <img src="{% static 'posts/home.JPG' %}" class="img-fluid rounded" style="max-height: 200px ;"/> -->
         <!-- <h1>ようこそ</h1> -->
         <hr>
+        <h3 class="text-center"> 特にやることもないままに、一日中硯にむかって、<br>
+            心に浮かんでは消えていく何ということも無いことを、<br>
+            なんとなく書き付けると、あやしくも狂おしい感じだ。<br>
+        (徒然草の冒頭現代語訳)</h3>
 
+        <!-- {% for post in posts.all %} -->
             <!-- 投稿の番号(djangoが勝手に一意にするために割り振ってくれる) -->
-            <a href = "{% url 'post_detail' post.id %}">{{post.title}}</a>
+            <!-- <a href = "{% url 'post_detail' post.id %}">{{post.title}}</a> -->
             <br/><br/>
-            {{post.published}}
+            <!-- {{post.published}} -->
             <br/><br/>
             <!-- fluid属性でリスポンシブにし、roundedで角を丸くした -->
-            <img src="{{ post.image.url}}" class="img-fluid rounded" style="max-height: 200px ;"/>
+            <!-- <img src="{{ post.image.url}}" class="img-fluid rounded" style="max-height: 200px ;"/> -->
             <br/><br/>
 
             <!-- {{post.body}} -->
-            {{post.body}}
+            <!-- {{post.summary}} -->
             <br/><br/>
+        <!-- {% endfor %} -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
